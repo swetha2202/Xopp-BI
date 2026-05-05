@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pmdb-api
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: CLIENT_URL
+        sync: false
